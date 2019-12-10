@@ -8,6 +8,7 @@ from api.handlers.UserHandlers import (AddUser, DataAdminRequired,
                                        RefreshToken, Register, ResetPassword,
                                        UsersData)
 
+from api.handlers.NoteHandlers import (NotesClass)
 
 def generate_routes(app):
 
@@ -41,3 +42,5 @@ def generate_routes(app):
 
     # Example user handler for user permission.
     api.add_resource(AddUser, '/user_add')
+
+    api.add_resource(NotesClass,'/notes')

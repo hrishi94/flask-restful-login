@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 from api.database.database import db
-from api.models.models import User
+from api.models.user_models import User
 
 
 def create_super_admin():

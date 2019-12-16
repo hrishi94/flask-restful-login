@@ -89,8 +89,6 @@ class NotesData(Resource):
             # Get end date.
             end_date = datetime.strptime(request.args.get('end_date'), '%d.%m.%Y')
 
-            print(usernames, emails, start_date, end_date)
-
             # Filter users by usernames, emails and range of date.
             users = Notes.query\
                 .filter(Notes.username.in_(usernames))\

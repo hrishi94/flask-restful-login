@@ -8,9 +8,10 @@ from flask import g, request
 from flask_restful import Resource
 
 import api.error.errors as error
-from api.conf.auth import auth, refresh_jwt
+from api.conf.auth import auth, refresh_jwt,get_username
 from api.database.database import db
 from api.models.note_models import Notes
+from api.models.user_models import User
 from api.roles import role_required
 from api.schemas.note_schema import BaseNoteSchema
 
@@ -24,8 +25,14 @@ class NotesClass(Resource):
             # Get username, password and email.
             username, title, description = request.json.get('username').strip(), request.json.get('title').strip(), \
                                         request.json.get('description').strip()
-        except Exception as why:
+            
+            header_token = request.headers.get('Authorization')
+            print(get_username(header_token[7:]))
 
+
+
+        except Exception as why:
+            print why
             # Log input strip or etc. errors.
             logging.info("Couldn't add the note" + str(why))
 

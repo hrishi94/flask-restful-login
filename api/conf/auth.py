@@ -12,3 +12,7 @@ refresh_jwt = JWT('telelelele', expires_in=7200)
 
 # Auth object creation.
 auth = HTTPTokenAuth('Bearer')
+
+def get_username(token):
+    data = jwt.loads(token)
+    return data

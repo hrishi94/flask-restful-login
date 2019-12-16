@@ -9,6 +9,7 @@ from api.handlers.UserHandlers import (AddUser, DataAdminRequired,
                                        UsersData)
 
 from api.handlers.NoteHandlers import (NotesClass)
+from api.handlers.CommentHandlers import (CommentsClass)
 
 def generate_routes(app):
 
@@ -44,3 +45,5 @@ def generate_routes(app):
     api.add_resource(AddUser, '/user_add')
 
     api.add_resource(NotesClass,'/notes')
+	
+	api.add_resource(CommentsClass,'/comments')

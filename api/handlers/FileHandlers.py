@@ -19,6 +19,9 @@ class FileClass(Resource):
     def CreateNewDir():
         os.makedir("files")
 	
+	def allowed_file(filename):
+		ALLOWED_EXTENSIONS = set(['txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif', 'csv'])
+		return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
     #@staticmethod
     #@auth.login_required
     def post():

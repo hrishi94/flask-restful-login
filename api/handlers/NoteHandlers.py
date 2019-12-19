@@ -28,7 +28,7 @@ class NotesClass(Resource):
             
             header_token = request.headers.get('Authorization')
             print(get_username(header_token[7:]))
-			username = get_username(header_token[7:]) 
+	    username = get_username(header_token[7:]) 
 
 
 

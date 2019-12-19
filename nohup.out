@@ -1,0 +1,22 @@
+Super admin was set.
+Admin was set.
+Test user was set.
+ * Serving Flask app "main" (lazy loading)
+ * Environment: production
+   WARNING: This is a development server. Do not use it in a production deployment.
+   Use a production WSGI server instead.
+ * Debug mode: on
+Traceback (most recent call last):
+  File "/usr/lib64/python2.7/runpy.py", line 174, in _run_module_as_main
+    "__main__", fname, loader, pkg_name)
+  File "/usr/lib64/python2.7/runpy.py", line 72, in _run_code
+    exec code in run_globals
+  File "/home/ec2-user/flask-restful-login/main.py", line 66, in <module>
+    app.run(port=5000, debug=True, host='localhost', use_reloader=True)
+  File "/usr/lib/python2.7/site-packages/flask/app.py", line 990, in run
+    run_simple(host, port, self, **options)
+  File "/usr/lib/python2.7/site-packages/werkzeug/serving.py", line 988, in run_simple
+    s.bind(server_address)
+  File "/usr/lib64/python2.7/socket.py", line 228, in meth
+    return getattr(self._sock,name)(*args)
+socket.error: [Errno 98] Address already in use

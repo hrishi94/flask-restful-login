@@ -63,4 +63,4 @@ if __name__ == '__main__':
     generate_routes(app)
 
     # Run app.
-    app.run(port=5000, debug=True, host='localhost', use_reloader=True)
+    app.run(port=5000, debug=True, host='0.0.0.0', use_reloader=True)

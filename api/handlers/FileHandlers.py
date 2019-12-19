@@ -19,27 +19,27 @@ class FileClass(Resource):
     def CreateNewDir():
         os.makedir("files")
 	
-	def allowed_file(filename):
+    def allowed_file(filename):
 		ALLOWED_EXTENSIONS = set(['txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif', 'csv'])
 		return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
     #@staticmethod
     #@auth.login_required
-    def post():
+    def post(self):
 
         try:
             # Get username, password and email.
-                        if 'file' not in request.files:
-				return error.INVALID_INPUT_422
-			file = request.files['file']
+                        if 'file' not in request.files.to_dict():
+		        	return error.INVALID_INPUT_422
+			file = request.files.to_dict()['file']
         # if user does not select file, browser also
         # submit an empty part without filename
 			if file.filename == '':
 				return rerror.INVALID_INPUT_422
-			if file and allowed_file(file.filename):
-				filename = secure_filename(file.filename)
-				UPLOAD_FOLDER = './files/'
-				CreateNewDir()
-				file.save(os.path.join(UPLOAD_FOLDER, filename))
+                        if file :#and allowed_file(file.filename):
+				filename = file.filename
+				#UPLOAD_FOLDER = './files/'
+				#CreateNewDir()
+				file.save(filename)
 	except Exception as why:
 
             # Log input strip or etc. errors.

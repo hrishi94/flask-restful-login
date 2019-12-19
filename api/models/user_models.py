@@ -54,7 +54,7 @@ class User(db.Model):
             return token
 
         # Return normal user flag.
-        return jwt.dumps({'email': self.email, 'admin': 0})
+        return jwt.dumps({'email': self.email, 'admin': 0,'username': self.username})
 
     # Generates a new access token from refresh token.
     @staticmethod

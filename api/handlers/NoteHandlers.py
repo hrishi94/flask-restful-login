@@ -23,11 +23,12 @@ class NotesClass(Resource):
 
         try:
             # Get username, password and email.
-            username, title, description = request.json.get('username').strip(), request.json.get('title').strip(), \
+            title, description = request.json.get('title').strip(), \
                                         request.json.get('description').strip()
             
             header_token = request.headers.get('Authorization')
             print(get_username(header_token[7:]))
+			username = get_username(header_token[7:]) 
 
 
 

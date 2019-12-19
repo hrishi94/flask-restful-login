@@ -22,9 +22,10 @@ class FileClass(Resource):
     def allowed_file(filename):
 		ALLOWED_EXTENSIONS = set(['txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif', 'csv'])
 		return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
-    #@staticmethod
-    #@auth.login_required
-    def post(self):
+
+    @staticmethod
+    @auth.login_required
+    def post():
 
         try:
             # Get username, password and email.

@@ -28,6 +28,8 @@ class Notes(db.Model):
 
     # Creation time for user.
     created = db.Column(db.DateTime, default=datetime.utcnow)
+	
+	filename = db.Column(db.String(length=80),nullable=True)
 
 
     def __repr__(self):

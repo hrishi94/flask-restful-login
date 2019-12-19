@@ -15,4 +15,4 @@ auth = HTTPTokenAuth('Bearer')
 
 def get_username(token):
     data = jwt.loads(token)
-    return data
+    return data['username']

@@ -10,6 +10,7 @@ from api.handlers.UserHandlers import (AddUser, DataAdminRequired,
 
 from api.handlers.NoteHandlers import (NotesClass)
 from api.handlers.CommentHandlers import (CommentsClass)
+from api.handlers.FileHandlers import (FileClass)
 
 def generate_routes(app):
 
@@ -47,3 +48,5 @@ def generate_routes(app):
     api.add_resource(NotesClass,'/notes')
 	
     api.add_resource(CommentsClass,'/comments')
+	
+    api.add_resource(FileClass,'/files')	

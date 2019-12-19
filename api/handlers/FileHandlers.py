@@ -16,8 +16,8 @@ from api.roles import role_required
 
 class FileClass(Resource):
 
-	def CreateNewDir():
-		os.makedir("files")
+    def CreateNewDir():
+        os.makedir("files")
 	
     #@staticmethod
     #@auth.login_required
@@ -25,7 +25,7 @@ class FileClass(Resource):
 
         try:
             # Get username, password and email.
-            if 'file' not in request.files:
+                        if 'file' not in request.files:
 				return error.INVALID_INPUT_422
 			file = request.files['file']
         # if user does not select file, browser also
@@ -37,13 +37,13 @@ class FileClass(Resource):
 				UPLOAD_FOLDER = './files/'
 				CreateNewDir()
 				file.save(os.path.join(UPLOAD_FOLDER, filename))
-			except Exception as why:
+	except Exception as why:
 
             # Log input strip or etc. errors.
-            logging.info("Couldn't add the file" + str(why))
+                        logging.info("Couldn't add the file" + str(why))
 
             # Return invalid input error.
-            return error.INVALID_INPUT_422
+                        return error.INVALID_INPUT_422
 
         # Check if any field is none.
 
